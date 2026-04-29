@@ -1,0 +1,6 @@
+variables:
+  displayName: 'Run PowerShell Script to List query output'
+  filePath: '$(System.DefaultWorkingDirectory)/Workitem_Scripts/list_query.ps1'
+  organization: 'slb-it'
+  tags: 'L3,AD,ME,SS'
+  projectList: 'Project1,Project2,Project3,Project4'

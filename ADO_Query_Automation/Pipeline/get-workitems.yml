@@ -1,0 +1,24 @@
+trigger:
+- none  
+
+pool:
+  vmImage: windows-latest
+
+variables:
+- template: ./get-QueryVariable.yml
+
+steps:
+- checkout: self
+
+- task: PowerShell@2
+  displayName: '${{ variables.displayName }}'
+  inputs:
+    targetType: 'filePath'
+    filePath: '${{ variables.filePath }}'
+    arguments: '-organization "${{ variables.organization }}" -pat "$(pat)" -startDate "$(startDate)" -endDate "$(endDate)" -tags "${{ variables.tags }}" -projectList "${{ variables.projectList }}"'
+
+- task: PublishBuildArtifacts@1
+  displayName: Publish CSV
+  inputs:
+    pathToPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: 'WIQLResults'
