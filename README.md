@@ -84,8 +84,6 @@ ADO_Query_Automation/
   * Cannot be viewed after creation
 * `startDate` and `endDate` are configured via pipeline variables for flexibility
 
-> ⚠️ Never hardcode sensitive values like PAT in scripts or YAML files.
-
 ---
 
 ## ▶️ Usage
